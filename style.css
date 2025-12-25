@@ -1,0 +1,1196 @@
+:root {
+    --color-accent: #0d102c;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.5px;
+}
+
+/* ================== 基本样式 ================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 70px; /* 顶部留出导航栏高度 */
+}
+
+/* ================== 导航栏 ================== */
+
+/* 初始导航（首页顶部） */
+nav {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 滚动后状态 */
+nav.scrolled {
+    background-color: rgba(13,16,44,0.98);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+
+/* 导航整体 */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13,16,44,0.95); /* 保留深蓝 */
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+nav .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+}
+
+/* Logo */
+nav .logo img {
+    height: 55px; /* 稍大更醒目 */
+    width: auto;
+    transition: transform 0.2s;
+}
+
+nav .logo:hover img {
+    transform: scale(1.05);
+}
+
+/* 导航菜单 */
+nav .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* 让文字更清晰 */
+    font-weight: 600;
+    text-transform: uppercase; /* 全部大写更现代 */
+}
+
+nav .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 6px;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+/* 悬停效果 */
+nav .nav-links li a:hover {
+    color: #ccc;
+    border-bottom: 2px solid #fff; /* 底部线强调 */
+}
+
+/* 手机端 */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 手机端样式 */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #0d102c;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+    nav .nav-links.active {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+
+/* ================== 标题 ================== */
+h1, h2 {
+    color: #0d102c;
+}
+
+/* ================== section ================== */
+section {
+    padding: 50px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* ================== Masonry Gallery ================== */
+.gallery {
+    column-count: 3;
+    column-gap: 16px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* 平板 */
+@media (max-width: 1024px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+/* 手机 */
+@media (max-width: 768px) {
+    .gallery {
+        column-count: 1;
+    }
+}
+
+
+/* ================== About Us ================== */
+.services h4 {
+    margin-bottom: 5px;
+    color: #0d102c;
+}
+
+.services p {
+    margin: 0 0 15px 0;
+}
+
+.reasons {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reasons li {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #0d102c;
+}
+
+
+
+
+/* ================== Job Posting ================== */
+#jobs {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+#jobs h2, #jobs h3 {
+    color: #0d102c;
+}
+
+#jobs h2 {
+    margin-bottom: 20px;
+}
+
+#jobs h3 {
+    margin: 25px 0 10px 0;
+}
+
+#jobs p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#jobs ul {
+    list-style: disc inside;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+#jobs ul li {
+    margin-bottom: 10px;
+}
+
+#jobs strong {
+    color: #0d102c;
+}
+
+/* 联系方式卡片 */
+#jobs .contact-card {
+    background-color: #fff;
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#jobs .contact-card h3 {
+    margin-top: 0;
+    color: #0d102c;
+}
+
+#jobs .contact-card a {
+    color: #0d102c;
+    text-decoration: none;
+}
+
+#jobs .contact-card a:hover {
+    text-decoration: underline;
+}
+
+/* ================== Modal 图片放大 ================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+#caption {
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    color: #bbb;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+
+/* Contact Us 样式 */
+#contact {
+    background-color: #0d102c; /* 蓝色背景 */
+    color: #fff; /* 白色字体 */
+    padding: 60px 20px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap; /* 手机端换行 */
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* 左侧标题 */
+.contact-title {
+    flex: 1 1 300px; /* 保证左侧有足够宽度 */
+}
+
+.contact-title h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    color: #fff; /* 确保白色可见 */
+}
+
+/* 右侧联系人信息 */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 2 1 500px; /* 保证右侧宽度 */
+}
+
+.contact-card {
+    background-color: rgba(255,255,255,0.05); /* 半透明卡片效果 */
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.contact-card h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.contact-card p,
+.contact-card a {
+    color: #fff;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+/* 响应式处理 - 手机端 */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-title,
+    .contact-info {
+        text-align: center;
+        flex: 1 1 100%;
+    }
+    .contact-card {
+        margin: 0 auto;
+    }
+}
+
+
+/* ================== Job Posting 联系方式 ================== */
+#jobs .contact-card {
+    background-color: #fff; /* 白色背景 */
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#jobs .contact-card h3 {
+    margin-top: 0;
+    color: #0d102c; /* 改成深蓝色字体 */
+}
+
+#jobs .contact-card p,
+#jobs .contact-card a {
+    color: #0d102c; /* 改成深蓝色字体 */
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+#jobs .contact-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================== Home Hero ================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;                 /* 关键：视觉高度 */
+    min-height: 500px;
+    background-image: url("images/home.jpg");
+    background-size: cover;       /* 铺满 */
+    background-position: center;  /* 中心裁切 */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;          /* 垂直居中 */
+}
+
+
+/* 深色遮罩（Humphreys 就有） */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13,16,44,0.55);
+}
+
+/* 文案容器 */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    padding: 0 24px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    max-width: 700px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 520px;
+    line-height: 1.6;
+}
+
+/* 手机端 */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+
+/* ================== Home Hero ================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 520px;
+    background-image: url("images/home.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 深色遮罩 */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13,16,44,0.55);
+}
+
+/* 文案 */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    padding: 0 24px;
+    margin: 0 auto;
+    color: #fff;
+
+    /* 入场动画 */
+    animation: fadeUp 1s ease-out forwards;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    max-width: 720px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* ================== Hero 按钮 ================== */
+.hero-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* 通用按钮 */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 主按钮 */
+.btn-primary {
+    background-color: #ffffff;
+    color: #0d102c;
+}
+
+.btn-primary:hover {
+    background-color: #e6e6e6;
+    transform: translateY(-2px);
+}
+
+/* 描边按钮 */
+.btn-outline {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #0d102c;
+    transform: translateY(-2px);
+}
+
+/* ================== 动画 ================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================== 手机端 ================== */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+        min-height: 420px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn {
+        width: fit-content;
+    }
+}
+
+
+/* Hero 背景缓慢放大动画 */
+.hero {
+    animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+    from {
+        background-size: 100%;
+    }
+    to {
+        background-size: 108%;
+    }
+}
+
+
+/* ================== Contact Section ================== */
+
+.contact-section {
+    background-color: #0d102c;
+    color: #fff;
+    padding: 80px 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* 左侧 */
+.contact-left h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-left p {
+    font-size: 18px;
+    max-width: 420px;
+    opacity: 0.85;
+}
+
+/* 右侧联系方式 */
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-card {
+    background: rgba(255,255,255,0.08);
+    padding: 28px 32px;
+    border-radius: 12px;
+}
+
+.contact-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.contact-card h3 span {
+    font-weight: normal;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.contact-card p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+.contact-card a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.contact-card a:hover {
+    border-bottom-color: #fff;
+}
+
+/* 手机端 */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .contact-left h2 {
+        font-size: 36px;
+    }
+
+    .contact-card {
+        text-align: left;
+    }
+}
+
+
+/* ================== Project Filters ================== */
+.project-filters {
+    display: flex;
+    gap: 16px;
+    margin: 30px 0 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid #0d102c;
+    color: #0d102c;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #0d102c;
+    color: #fff;
+}
+
+/* 图片过滤动画 */
+.gallery img {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.gallery img.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+
+
+/* ================== Hero Particles ================== */
+.hero-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    from {
+        transform: translateY(100%) translateX(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.4;
+    }
+    to {
+        transform: translateY(-120%) translateX(40px);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+/* ================== About Section ================== */
+.about-section {
+    background: #fff;
+    padding: 80px 20px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-header {
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.about-header h2 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.about-header p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* 服务卡片 */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.about-card {
+    background: #f9f9f9;
+    padding: 32px;
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.about-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+/* Why choose */
+.about-reasons h3 {
+    margin-bottom: 20px;
+}
+
+.about-reasons ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    font-size: 16px;
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-reasons ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* ================== Job Posting ================== */
+.jobs-section {
+    background: #f7f8fb;
+    padding: 90px 20px;
+}
+
+.jobs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.jobs-header {
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.jobs-header h2 {
+    font-size: 44px;
+    margin-bottom: 14px;
+}
+
+.jobs-header p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Layout */
+.jobs-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+/* 左侧卡片 */
+.job-summary {
+    background: #fff;
+    padding: 36px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+}
+
+.job-summary h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.job-meta {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+}
+
+.job-meta li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.job-highlight {
+    background: #f2f4ff;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 右侧内容 */
+.job-details {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.job-block h4 {
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.job-block p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.job-block ul {
+    padding-left: 18px;
+    line-height: 1.7;
+}
+
+.job-block ul li {
+    margin-bottom: 8px;
+}
+
+/* Apply */
+.job-apply {
+    margin-top: 80px;
+    padding-top: 50px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.job-apply h3 {
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.job-contact {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.job-contact a {
+    color: #0d102c;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(13,16,44,0.3);
+}
+
+.job-contact a:hover {
+    border-bottom-color: #0d102c;
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+    .jobs-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .job-summary {
+        position: relative;
+        top: 0;
+    }
+}
+
+
+/* ================== Apply Button ================== */
+.apply-btn {
+    display: inline-block;
+    margin-bottom: 28px;
+    padding: 14px 36px;
+    background: #0d102c;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.apply-btn:hover {
+    background: #1b1f55;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* ================== Typography System ================== */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--color-text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 标题字体 */
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+/* 标题层级 */
+h1 {
+    font-size: 56px;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 44px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+/* 正文 */
+p, li {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+}
+
+/* 小字说明 */
+.small-text {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* 手机端 */
+@media (max-width: 768px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 32px; }
+    h3 { font-size: 24px; }
+}
+
+
+
+
+/* ================== Buttons ================== */
+.btn,
+.apply-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 主按钮 */
+.btn-primary,
+.apply-btn {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.btn-primary:hover,
+.apply-btn:hover {
+    background: #3f5ae0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* 次按钮 */
+.btn-outline {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: var(--color-primary);
+}
+
+
+section {
+    padding: 100px 20px;
+}
+
+section h2 {
+    margin-bottom: 24px;
+}
+
+section p {
+    max-width: 680px;
+}
+
+
+/* 修复 How to Apply 居中问题 */
+.job-apply p {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+
+.job-contact {
+    margin-top: 24px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.job-summary {
+    text-align: center;
+}
+
+:root {
+    --color-accent: #0d102c;
+}
+
+.job-summary .apply-btn {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+
+
+
+
+
+.about-section {
+    position: relative;
+    padding: 100px 20px;
+
+    background-image: url("images/aboutus.jpg");
+    background-size: cover;        /* 等比例铺满 */
+    background-position: center;   /* 居中裁切 */
+    background-repeat: no-repeat;
+}
