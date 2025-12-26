@@ -1,2 +1,0 @@
-# ninjagardening
-companywebsite
